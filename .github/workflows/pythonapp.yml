@@ -31,7 +31,7 @@ jobs:
     steps:
     - name: Discord notification
       env:
-        DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        DISCORD_WEBHOOK: https://discord.com/api/webhooks/812277837020659722/H7Rc2eUKpwYv2keQa-w2Q6cD_bGnmajE3YlFdYVPTDvopBqf5T3rRcmmXR25ZojT1M01
         DISCORD_USERNAME: Houssem
         DISCORD_AVATAR: https://i.pinimg.com/originals/c1/19/64/c119640502b13f467b78e2312130e1f2.png
       uses: Ilshidur/action-discord@master
