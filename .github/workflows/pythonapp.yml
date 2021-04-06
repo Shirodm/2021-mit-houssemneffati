@@ -27,7 +27,6 @@ jobs:
     runs-on: ubuntu-latest
     needs:
       - build
-    if: job.status == 'success'
 
     steps:
     - name: Discord notification
