@@ -1,0 +1,39 @@
+name: Python application
+
+on: [push, pull_request]
+
+jobs:
+ build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - run: |
+        git fetch --prune --unshallow
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.8
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+    - name: Run hello-world project
+      run: |
+        python3 helloworld.py
+
+ notify:
+
+    runs-on: ubuntu-latest
+    needs:
+      - build
+
+    steps:
+    - name: Discord notification
+      env:
+        DISCORD_WEBHOOK: https://discord.com/api/webhooks/812277837020659722/H7Rc2eUKpwYv2keQa-w2Q6cD_bGnmajE3YlFdYVPTDvopBqf5T3rRcmmXR25ZojT1M01
+        DISCORD_USERNAME: Houssem
+        DISCORD_AVATAR: https://i.pinimg.com/originals/c1/19/64/c119640502b13f467b78e2312130e1f2.png
+      uses: Ilshidur/action-discord@master
+      with:
+        args: 'Houssem Neffati.'
