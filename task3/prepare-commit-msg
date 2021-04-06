@@ -1,6 +1,0 @@
-#!/bin/sh
-
-# prepending commit message. 
-Prefix=$"MIT-2021: "
-
-sed -i.bak -e "1s/^/$Prefix/" $1
