@@ -61,6 +61,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
      - name: Run test1
+       uses: actions/setup-python@v1
      - run: |
         echo "Deployed"
 
