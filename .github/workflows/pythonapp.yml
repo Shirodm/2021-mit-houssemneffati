@@ -4,9 +4,7 @@ on: [push, pull_request]
 
 jobs:
  build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
     - run: |
@@ -61,8 +59,9 @@ jobs:
  deploy:
     needs: [test1, test2]
     runs-on: ubuntu-latest
-    - name: Run test1
-      run: |
+    steps:
+     - name: Run test1
+     - run: |
         echo "Deployed"
 
  notify:
